@@ -2,7 +2,7 @@ class Terminal:
     """Handles all terminal inputs/outputs."""
 
     def __init__(self):
-        self.letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+        self._letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
 
     def guess_letter(self):
         """Asks the user to input a letter, validates and returns it
@@ -16,9 +16,8 @@ class Terminal:
             if len(guess) == 0 :
                 print("No guess submitted.")
             elif len(guess) > 1:
-                if input("Did you want to guess the whole word?").lower == 'y':
-                    is_good_guess = True
-            elif guess in self.letters: 
+                print("You can only guess one letter at a time.")
+            elif guess in self._letters: 
                 is_good_guess = True
         
         return guess
@@ -31,4 +30,4 @@ class Terminal:
         """
         for item in args:
             this_item = str(item)
-            print(this_item+'\n')
+            print(this_item)

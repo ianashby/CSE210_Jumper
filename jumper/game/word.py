@@ -57,6 +57,14 @@ class Word():
                 output += '_'
             output += ' '
         return output
+    
+    def getGuesses(self):
+        if len(self._guesses) == 0:
+            return 'None'
+        return ''.join(self._guesses)
+    
+    def getWord(self):
+        return self._word
 
 if __name__ == "__main__":
     word = Word()
